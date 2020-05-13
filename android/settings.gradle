@@ -1,2 +1,3 @@
 rootProject.name='liveplay'
 include ':app'
+include ':playersdk'
