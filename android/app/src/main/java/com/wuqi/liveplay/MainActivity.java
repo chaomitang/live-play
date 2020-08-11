@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.wuqi.playersdk.activity.TestSurfaceImageViewActivity;
+import com.wuqi.playersdk.demo.activity.TestSurfaceImageViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 

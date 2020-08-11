@@ -1,8 +1,7 @@
-package com.wuqi.playersdk.view;
+package com.wuqi.playersdk.demo.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -24,7 +23,6 @@ public class SurfaceImageView extends SurfaceView implements SurfaceHolder.Callb
 
     private Bitmap mBitmap;
     private HandlerThread mThread;
-    private Handler mTHolder;
 
     public SurfaceImageView(Context context) {
         super(context);
@@ -62,8 +60,8 @@ public class SurfaceImageView extends SurfaceView implements SurfaceHolder.Callb
         running = true;
         mThread = new HandlerThread("SurfaceImage-" + System.currentTimeMillis(), Process.THREAD_PRIORITY_BACKGROUND);
         mThread.start();
-        mTHolder = new Handler(mThread.getLooper());
-        mTHolder.post(new Runnable() {
+        Handler handler = new Handler(mThread.getLooper());
+        handler.post(new Runnable() {
             @Override
             public void run() {
                 while (running) {
